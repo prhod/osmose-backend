@@ -90,7 +90,7 @@ class template_config:
     db_base     = "osmose"
     db_user     = "osmose"
     db_password = "-osmose-"
-    db_host     = None        # Use socket by default
+    db_host = "localhost"        # Use socket by default
     db_schema   = None
 
     def __init__(self, country, polygon_id=None, analyser_options=None, download_repo=GEOFABRIK):
@@ -165,7 +165,7 @@ class default_simple(template_config):
             "url": download_url,
             "osmosis": country
         }
-        self.analyser["sax"] = "xxx"
+        self.analyser["sax"] = "vagrant"
         self.analyser["osmosis_roundabout_reverse"] = "xxx"
         self.analyser["osmosis_roundabout_level"] = "xxx"
         self.analyser["osmosis_soundex"] = "xxx"
@@ -202,7 +202,7 @@ class default_simple(template_config):
         self.analyser["osmosis_parking_highway"] = "xxx"
         self.analyser["osmosis_highway_bad_intersection"] = "xxx"
         self.analyser["osmosis_water"] = "xxx"
-        self.analyser["osmosis_relation_public_transport"] = "xxx"
+        self.analyser["osmosis_relation_public_transport"] = "vagrant"
         self.analyser["osmosis_highway_turn_lanes"] = "xxx"
         self.analyser["osmosis_highway_almost_junction"] = "xxx"
         self.analyser["osmosis_highway_without_ref"] = "xxx"
@@ -210,6 +210,7 @@ class default_simple(template_config):
         self.analyser["osmosis_wikipedia"] = "xxx"
         self.analyser["osmosis_highway_name_close"] = "xxx"
         self.analyser["osmosis_relation_route_access"] = "xxx"
+        self.analyser["osmosis_public_transport_stop_position"] = "xxx"
 
 class default_country_simple(default_simple):
     def __init__(self, part, country, polygon_id=None, analyser_options=None,
@@ -348,8 +349,8 @@ france_local_db.sql_post_scripts += [
 france_local_db.analyser["merge_heritage_FR_merimee"] = "xxx"
 france_local_db.analyser["merge_poste_FR"] = "xxx"
 france_local_db.analyser["merge_school_FR"] = "xxx"
-france_local_db.analyser["merge_public_transport_FR_ratp"] = "xxx"
-france_local_db.analyser["merge_public_transport_FR_stif"] = "xxx"
+france_local_db.analyser["merge_public_transport_FR_ratp"] = "vagrant"
+france_local_db.analyser["merge_public_transport_FR_stif"] = "vagrant"
 france_local_db.analyser["merge_railway_level_crossing_FR"] = "xxx"
 france_local_db.analyser["merge_railway_railstation_FR"] = "xxx"
 france_local_db.analyser["merge_tmc_point_FR"] = "xxx"
@@ -359,7 +360,7 @@ france_local_db.analyser["merge_wikipedia_FR"] = "xxx"
 france_local_db.analyser["merge_wikipedia_insee_FR"] = "xxx"
 france_local_db.analyser["merge_college_FR"] = "xxx"
 france_local_db.analyser["merge_service_public_FR"] = "xxx"
-france_local_db.analyser["merge_public_transport_FR_transgironde"] = "xxx"
+france_local_db.analyser["merge_public_transport_FR_transgironde"] = "vagrant"
 france_local_db.analyser["merge_public_transport_FR_tbm"] = "xxx"
 france_local_db.analyser["merge_public_transport_FR_cg71"] = "xxx"
 france_local_db.analyser["merge_public_transport_FR_stan"] = "xxx"
