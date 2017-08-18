@@ -33,8 +33,10 @@ class Analyser_Osmosis_Public_Transport_Stop_Position(Analyser_Osmosis):
 
     def __init__(self, config, logger = None):
         Analyser_Osmosis.__init__(self, config, logger)
-        self.classs[1] = {"item": "1260", "level": 3, "tag": ["public_transport"], "desc": T_(u"This stop is not properly categorized") }
-        self.callback10 = lambda res: {"class":1, "data":[self.id, self.positionAsText]}
+        self.classs[1] = {"item": "1260", "level": 3,
+            "tag": ["public_transport"],
+            "desc": T_(u"This stop is not properly categorized")}
+        self.callback10 = lambda res: {"class":1, "data":[self.node_full, self.positionAsText], "fix":{"public_transport": "platform"}}
 
     def analyser_osmosis_common(self):
         self.run(sql10, self.callback10)
